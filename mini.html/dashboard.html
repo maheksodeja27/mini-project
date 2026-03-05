@@ -10,6 +10,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="../style.css/dashboard.css">
+  <link rel="stylesheet" href="../style.css/footer.css">
 
 </head>
 
@@ -30,7 +31,7 @@
   <div class="header">
     <h1>📊 Admin Dashboard</h1>
     <div class="header-right">
-      <button class="themeToggle" onclick="toggleTheme()" id="themeBtn">🌙</button>
+      <button class="toggle" onclick="toggleTheme()" id="themeBtn">🌙</button>
       <div class="role">👤 Role: <span>Administrator</span></div>
     </div>
   </div>
@@ -114,8 +115,21 @@
 
 </div>
 
+<!-- FOOTER -->
+<div id="footer-container"></div>
+
 <!-- JS -->
 <script src="../mini.js/dashboard.js"></script>
+<script src="../mini.js/footer.js"></script>
+<script>
+  // Load footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('footer-container').innerHTML = html;
+    })
+    .catch(error => console.error('Error loading footer:', error));
+</script>
 
 </body>
 </html>

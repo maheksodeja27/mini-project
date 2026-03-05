@@ -38,29 +38,21 @@ function clearSearch(){
 }
 
 // Theme toggle
-let darkMode = localStorage.getItem('darkMode') === 'true';
-
 function toggleTheme(){
-  darkMode = !darkMode;
-  const body = document.body;
+  document.body.classList.toggle('dark');
   const btn = document.getElementById('themeBtn');
-  
-  if(darkMode){
-    body.classList.add('dark-theme');
-    btn.textContent = '☀️';
-  } else {
-    body.classList.remove('dark-theme');
-    btn.textContent = '🌙';
+  if (btn) {
+    btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
   }
-  
-  localStorage.setItem('darkMode', darkMode);
+  localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
 }
 
+// Initialize theme on page load
 document.addEventListener('DOMContentLoaded', function(){
-  const savedMode = localStorage.getItem('darkMode') === 'true';
-  if(savedMode){
-    darkMode = true;
-    document.body.classList.add('dark-theme');
-    document.getElementById('themeBtn').textContent = '☀️';
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark');
+    const btn = document.getElementById('themeBtn');
+    if (btn) btn.textContent = '☀️';
   }
 });

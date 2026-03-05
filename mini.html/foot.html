@@ -1,0 +1,111 @@
+<!-- ================= SMART RFID FOOTER (MATCHES SCREENSHOT) ================= -->
+<footer class="srfid-footer" aria-label="Site footer">
+  <div class="srfid-footer-container" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;align-items:start;padding-left:24px;margin-left:0;width:100%;max-width:none;">
+    <div class="srfid-footer-col srfid-footer-left" style="justify-self:start;margin-left:0;padding-left:0;">
+      <h3><span class="footer-icon">🏢</span> <span class="footer-brand">SmartRFID Technologies Pvt. Ltd.</span></h3>
+      <div class="footer-muted">🔒 Secure &amp; Intelligent Attendance Solutions</div>
+      <div class="footer-section-title">📞 Contact &amp; Support</div>
+      <div class="footer-contact-row"><span class="footer-icon">✉️</span> support@smartrfid.com</div>
+      <div class="footer-contact-row"><span class="footer-icon">📱</span> +91-99999 99999</div>
+      <div class="footer-contact-row"><span class="footer-icon">⏰</span> Mon–Sat | 9:00 AM – 6:00 PM</div>
+      <div class="footer-contact-row">
+        
+      </div>
+    </div>
+    <div class="srfid-footer-col srfid-footer-center" style="justify-self:center;">
+      <div class="footer-section-title">🔗 Quick Navigation</div>
+      <ul class="footer-nav-list">
+        <li><span class="footer-dot"></span> <span class="footer-icon">📊</span> <a href="#">Dashboard</a></li>
+        <li><span class="footer-dot"></span> <span class="footer-icon">🧾</span> <a href="#">Attendance Logs</a></li>
+        <li><span class="footer-dot"></span> <span class="footer-icon">📈</span> <a href="#">Reports</a></li>
+        <li><span class="footer-dot"></span> <span class="footer-icon">🖥️</span> <a href="#">Device Management</a></li>
+        <li><span class="footer-dot"></span> <span class="footer-icon">🔍</span> <a href="#">Audit Logs</a></li>
+        <li><span class="footer-dot"></span> <span class="footer-icon">👤</span> <a href="#">Admin Panel</a></li>
+      </ul>
+    </div>
+    <div class="srfid-footer-col srfid-footer-right" style="justify-self:end;margin-right:0;padding-right:0;width:100%;">
+      <div class="footer-section-title">🛰️ System Info</div>
+      <div class="footer-info-row">Version: <b>2.3.1</b> <span class="footer-small">(Last updated 2026-02-15)</span></div>
+      <div class="footer-info-row">Server: <span class="footer-status">Operational</span></div>
+      
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+.srfid-footer {
+  background: #f3f7fb;
+  padding: 36px 0 24px 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  color: #1e293b;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 8px rgba(30,41,59,0.04);
+}
+.srfid-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 32px;
+  align-items: flex-start;
+}
+.srfid-footer-col { min-width: 220px; }
+.srfid-footer-left h3 {
+  margin: 0 0 2px 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #183153;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-brand { font-weight: 700; }
+.footer-muted { color: #64748b; font-size: 15px; margin-bottom: 12px; }
+.footer-section-title {
+  font-weight: 600;
+  color: #334155;
+  margin: 18px 0 8px 0;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer-contact-row { margin: 4px 0; color: #1e293b; font-size: 15px; }
+.footer-link { color: #2563eb; text-decoration: underline; font-size: 15px; }
+.srfid-footer-center .footer-section-title { margin-top: 0; }
+.footer-nav-list { list-style: none; padding: 0; margin: 0; }
+.footer-nav-list li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 7px 0;
+  font-size: 15px;
+}
+.footer-dot {
+  width: 8px; height: 8px; background: #2563eb; border-radius: 50%; display: inline-block;
+}
+.footer-icon { font-size: 17px; }
+.srfid-footer-right .footer-info-row { margin: 6px 0; font-size: 15px; }
+.footer-small { color: #64748b; font-size: 13px; font-weight: 400; }
+.footer-status { color: #16a34a; font-weight: 600; }
+.footer-social-row { margin-top: 8px; display: flex; gap: 16px; }
+.footer-social-link { display: inline-flex; align-items: center; font-size: 17px; text-decoration: none; }
+.footer-social-link:hover { opacity: 0.8; }
+@media (max-width: 900px) {
+  .srfid-footer-container { grid-template-columns: 1fr; gap: 18px; }
+  .srfid-footer-col { min-width: 0; }
+}
+</style>
+<script>
+// Live time for footer
+function updateFooterTime() {
+  var el = document.getElementById('footerTime');
+  if (!el) return;
+  var now = new Date();
+  el.textContent = now.toLocaleTimeString();
+}
+setInterval(updateFooterTime, 1000);
+updateFooterTime();
+</script>
