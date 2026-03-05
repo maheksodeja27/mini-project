@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Three.js for 3D background particles -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+</head>
+<body>
+
+<canvas id="meshCanvas" style="position:fixed;top:0;left:0;z-index:-1;"></canvas>
+<div class="scene"></div>
+
+<div class="container">
+
+    <header class="header">
+        <div class="avatar">
+            <svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true">
+                <circle cx="32" cy="20" r="12" fill="#60a5fa"></circle>
+                <path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24" fill="#bfdbfe"></path>
+            </svg>
+        </div>
+        <div class="title">User Dashboard</div>
+    </header>
+
+    <!-- User Form -->
+    <div id="alertBox"></div>
+    <div class="user-form">
+        <input type="text" id="username" placeholder="Enter Your Name">
+        <input type="text" id="rfid" placeholder="Enter RFID Card Number">
+        <button id="saveBtn">Submit</button>
+    </div>
+
+    <!-- Controls (tabs) -->
+    <div class="controls">
+        <button id="weeklyBtn">Weekly</button>
+        <button id="monthlyBtn">Monthly</button>
+    </div>
+
+    <!-- Additional Actions -->
+    <div class="actions">
+        <button id="resetBtn">Reset</button>
+        <button id="downloadBtn">Download Report</button>
+        <button id="themeToggle">Toggle Dark Mode</button>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="cards">
+        <div class="card" id="summaryCard">
+            <div id="resultBox">Attendance details will appear here.</div>
+        </div>
+        <div class="card" id="calendarCard">
+            <h3>Calendar</h3>
+            <div class="calendar-header">
+                <button id="prevMonth">&lt;</button>
+                <span id="monthYear"></span>
+                <button id="nextMonth">&gt;</button>
+            </div>
+            <div id="calendar"></div>
+        </div>
+        <div class="card" id="notesCard">
+            <h3>Notes</h3>
+            <textarea id="notes" placeholder="Write your notes..."></textarea>
+        </div>
+        <div class="card" id="overviewCard" style="display:none;">
+            <h3>Attendance Overview</h3>
+            <canvas id="overviewChart" width="200" height="200"></canvas>
+        </div>
+        <div class="card chart-card" id="weeklyCard" style="display:none;">
+            <h3>Weekly Attendance</h3>
+            <canvas id="weeklyChart" width="400" height="200"></canvas>
+        </div>
+        <div class="card chart-card" id="monthlyCard" style="display:none;">
+            <h3>Monthly Attendance</h3>
+            <canvas id="monthlyChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+</div>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
