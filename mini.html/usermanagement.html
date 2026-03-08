@@ -16,8 +16,11 @@
 <!-- TOPBAR -->
 <div class="topbar">
     <div class="rfid-btn" onclick="toggleSidebar()">
-        <img src="https://cdn-icons-png.flaticon.com/512/891/891419.png" alt="RFID Logo">
-        <span>RFID</span>
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
 </div>
 
@@ -35,15 +38,17 @@
 
     <!-- NAV LINKS -->
     <div class="nav-links">
-        <a href="#">🏠 Dashboard</a>
-        <a href="#">👤 User Dashboard</a>
-        <a href="#">🛠 Admin Dashboard</a>
-        <a href="#" class="active">👥 User Management</a>
-        <a href="#">📦 Resource Admin</a>
-        <a href="#">⚙ System Config</a>
-        <a href="#">📊 Reports & Export</a>
-        <a href="#">🔔 Notifications <span class="badge">3</span></a>
-        <a href="#">🧾 Audit Logs</a>
+        <a href="dashboard.html">🏠 Dashboard</a>
+        <a href="usermanagement.html" class="active">👥 User Management</a>
+        <a href="resource_admin.html">📦 Resource Admin</a>
+        <a href="rfid_system_configuration.html">⚙ System Config</a>
+        <a href="report.html">📊 Reports & Export</a>
+        <a href="audit.html">🧾 Audit Logs</a>
+    </div>
+
+    <!-- LOGOUT BUTTON -->
+    <div class="logout-section">
+        <button class="logout-btn" onclick="handleLogout()">🚪 Logout</button>
     </div>
 
     <!-- PROFILE -->
@@ -54,8 +59,6 @@
             <div style="font-size:13px;opacity:0.7;">System Manager</div>
         </div>
     </div>
-
-    <button class="toggle" onclick="toggleTheme()">Toggle Theme</button>
 </div>
 
 <!-- Page Content Header -->

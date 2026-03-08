@@ -4,31 +4,62 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Profile</title>
-
-<link rel="stylesheet" href="../style.css/adminprofile.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="../style.css/nav.css">
+<link rel="stylesheet" href="../style.css/adminprofile.css">
+<link rel="stylesheet" href="../style.css/footer.css">
 </head>
 
 <body>
 
-<div class="navbar">
+<!-- TOPBAR -->
+<div class="topbar">
+<div class="rfid-btn" onclick="toggleSidebar()">
+<div class="hamburger-menu">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</div>
 
-<h2>Admin Panel</h2>
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+<div class="sidebar-header">
+<h2>RFID Panel</h2>
+<span class="close-btn" onclick="toggleSidebar()">✕</span>
+</div>
 
+<!-- SEARCH -->
+<div class="search">
+<input type="text" id="searchInput" placeholder="Search menu..." onkeyup="filterLinks()">
+</div>
+
+<!-- NAV LINKS -->
 <div class="nav-links">
-<a href="#">Dashboard</a>
-<a href="#">Resources</a>
-<a href="#">Analytics</a>
-<a href="#">Reports</a>
-<a href="#">Settings</a>
+<a href="dashboard.html">🏠 Dashboard</a>
+<a href="usermanagement.html">👥 User Management</a>
+<a href="resource_admin.html">📦 Resource Admin</a>
+<a href="rfid_system_configuration.html">⚙ System Config</a>
+<a href="report.html">📊 Reports & Export</a>
+<a href="audit.html">🧾 Audit Logs</a>
 </div>
 
-<button onclick="toggleTheme()">Toggle Theme</button>
-
+<!-- LOGOUT BUTTON -->
+<div class="logout-section">
+<button class="logout-btn" onclick="handleLogout()">🚪 Logout</button>
 </div>
 
+<!-- PROFILE -->
+<div class="profile">
+<img src="https://i.pravatar.cc/100">
+<div class="profile-info">
+<div>Admin</div>
+<div style="font-size:13px;opacity:0.7;">System Manager</div>
+</div>
+</div>
+</div>
 
 <div class="container">
 
@@ -272,6 +303,44 @@ System Notifications
 
 </div>
 
+</div>
+
+<!-- ================= SMART RFID FOOTER (MATCHES SCREENSHOT) ================= -->
+<footer class="srfid-footer" aria-label="Site footer">
+  <div class="srfid-footer-container" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;align-items:start;padding-left:24px;margin-left:0;width:100%;max-width:none;">
+    <div class="srfid-footer-col srfid-footer-left" style="justify-self:start;margin-left:0;padding-left:0;">
+      <h3><span class="footer-icon">🏢</span> <span class="footer-brand">SmartRFID Technologies Pvt. Ltd.</span></h3>
+      <div class="footer-muted">🔒 Secure & Intelligent Attendance Solutions</div>
+      <div class="footer-section-title">📞 Contact & Support</div>
+      <div class="footer-contact-row"><span class="footer-icon">✉️</span> support@smartrfid.com</div>
+      <div class="footer-contact-row"><span class="footer-icon">📱</span> +91-99999 99999</div>
+      <div class="footer-contact-row"><span class="footer-icon">⏰</span> Mon–Sat | 9:00 AM – 6:00 PM</div>
+      <div class="footer-contact-row">
+        
+      </div>
+    </div>
+    <div class="srfid-footer-col srfid-footer-center" style="justify-self:center;">
+      <div class="footer-section-title">🔗 Quick Navigation</div>
+      <ul class="footer-nav-list">
+        <li><span class="footer-dot"></span> <span class="footer-icon">📊</span> <a href="dashboard.html">Dashboard</a></li>
+        <li><span class="footer-dot"></span> <span class="footer-icon">🧾</span> <a href="audit.html">Attendance Logs</a></li>
+        <li><span class="footer-dot"></span> <span class="footer-icon">📈</span> <a href="report.html">Reports</a></li>
+        <li><span class="footer-dot"></span> <span class="footer-icon">🖥️</span> <a href="resource_admin.html">Device Management</a></li>
+        <li><span class="footer-dot"></span> <span class="footer-icon">🔍</span> <a href="audit.html">Audit Logs</a></li>
+        <li><span class="footer-dot"></span> <span class="footer-icon">👤</span> <a href="Adminprofile.html">Admin Panel</a></li>
+      </ul>
+    </div>
+    <div class="srfid-footer-col srfid-footer-right" style="justify-self:end;margin-right:0;padding-right:0;width:100%;">
+      <div class="footer-section-title">🛰️ System Info</div>
+      <div class="footer-info-row">Version: <b>2.3.1</b> <span class="footer-small">(Last updated 2026-02-15)</span></div>
+      <div class="footer-info-row">Server: <span class="footer-status">Operational</span></div>
+      <div class="footer-info-row">Current Time: <span id="footerTime" class="footer-small"></span></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../mini.js/nav.js"></script>
 <script src="../mini.js/adminprofile.js"></script>
 
 </body>
