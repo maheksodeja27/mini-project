@@ -31,6 +31,19 @@ flex-direction:column;
 align-items:center;
 }
 
+/* Report Page Topbar Override */
+.report-page .topbar{
+display:flex;
+align-items:flex-start;
+justify-content:flex-start;
+padding:20px;
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:1000;
+}
+
 .navbar{
 width:100%;
 padding:20px 40px;
